@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container my-5">
+        <h1 class="text-center mb-5">AI Model Marketplace</h1>
+
+        <!-- List Model Form -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h2 class="card-title">List a New AI Model</h2>
+                <form id="listModelForm" class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="modelName" class="form-control" placeholder="Model Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="modelDescription" class="form-control" placeholder="Model Description" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="modelPrice" class="form-control" placeholder="Model Price in Wei" required>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary w-100">List Model</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Load Models Section -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Available Models</h2>
+                <button id="loadModels" class="btn btn-success mb-3">Load Available Models</button>
+                <ul id="modelList" class="list-group"></ul>
+            </div>
+        </div>
+
+        <!-- Purchase Model Section -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Purchase a Model</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="purchaseModelId" class="form-control" placeholder="Model ID">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="purchasePrice" class="form-control" placeholder="Price in Wei">
+                    </div>
+                    <div class="col-md-12">
+                        <button id="purchaseButton" class="btn btn-warning w-100">Purchase Model</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rate Model Section -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Rate a Model</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="rateModelId" class="form-control" placeholder="Model ID">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="modelRating" class="form-control" placeholder="Rating (1-5)">
+                    </div>
+                    <div class="col-md-12">
+                        <button id="rateButton" class="btn btn-info w-100">Rate Model</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get Model Details Section -->
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title">Get Model Details</h2>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" id="detailModelId" class="form-control" placeholder="Model ID">
+                    </div>
+                    <div class="col-md-6">
+                        <button id="getModelDetailsButton" class="btn btn-secondary w-100">Get Model Details</button>
+                    </div>
+                </div>
+                <div id="modelDetailOutput" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
